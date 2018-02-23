@@ -46,7 +46,7 @@ For authentication you need to run following code
   var user = await client.MakeAuthAsync("<user_number>", hash, code);
 ``` 
 
-Full code you can see at [AuthUser test](https://github.com/Vladimir-Novick/TLSharp.NetCore2/TLSharp.NetCore2.Tests/TLSharpTests.cs)
+Full code you can see at [AuthUser test](https://github.com/Vladimir-Novick/TLSharp.NetCore2/blob/master/TLSharp.NetCore2.Tests/TLSharpTests.cs)
 
 When user is authenticated, TLSharp creates special file called _session.dat_. In this file TLSharp store all information needed for user session. So you need to authenticate user every time the _session.dat_ file is corrupted or removed.
 
@@ -66,7 +66,7 @@ You can call any method on authenticated user. For example, let's send message t
   await client.SendMessageAsync(new TLInputPeerUser() {user_id = user.id}, "OUR_MESSAGE");
 ```
 
-Full code you can see at [SendMessage test](https://github.com/Vladimir-Novick/TLSharp.NetCore2/TLSharp.NetCore2.Tests/TLSharpTests.cs)
+Full code you can see at [SendMessage test](https://github.com/Vladimir-Novick/TLSharp.NetCore2/blob/master/TLSharp.NetCore2.Tests/TLSharpTests.cs)
 
 To send message to channel you could use the following code:
 ```csharp
@@ -82,7 +82,7 @@ To send message to channel you could use the following code:
   //send message
   await client.SendMessageAsync(new TLInputPeerChannel() { channel_id = chat.id, access_hash = chat.access_hash.Value }, "OUR_MESSAGE");
 ```
-Full code you can see at [SendMessageToChannel test](https://github.com/Vladimir-Novick/TLSharp.NetCore2/TLSharp.NetCore2.Tests/TLSharpTests.cs)
+Full code you can see at [SendMessageToChannel test](https://github.com/Vladimir-Novick/TLSharp.NetCore2/blob/master/TLSharp.NetCore2.Tests/TLSharpTests.cs)
 ## Working with files
 Telegram separate files to two categories -> big file and small file. File is Big if its size more than 10 Mb. TLSharp tries to hide this complexity from you, thats why we provide one method to upload files **UploadFile**.
 
@@ -101,7 +101,7 @@ TLSharp provides two wrappers for sending photo and document
                 "application/zip", //mime-type
                 new TLVector<TLAbsDocumentAttribute>()); //document attributes, such as file name
 ```
-Full code you can see at [SendPhotoToContactTest](https://github.com/Vladimir-Novick/TLSharp.NetCore2/TLSharp.NetCore2.Tests/TLSharpTests.cs)
+Full code you can see at [SendPhotoToContactTest](https://github.com/Vladimir-Novick/TLSharp.NetCore2/blob/master/TLSharp.NetCore2.Tests/TLSharpTests.cs)
 
 To download file you should call **GetFile** method
 ```csharp
@@ -115,7 +115,7 @@ To download file you should call **GetFile** method
                 document.size); //size of fileChunk you want to retrieve
 ```
 
-Full code you can see at [DownloadFileFromContactTest](https://github.com/Vladimir-Novick/TLSharp.NetCore2/TLSharp.NetCore2.Tests/TLSharpTests.cs)
+Full code you can see at [DownloadFileFromContactTest](https://github.com/Vladimir-Novick/TLSharp.NetCore2/blob/master/TLSharp.NetCore2.Tests/TLSharpTests.cs)
 
 # Available Methods
 
