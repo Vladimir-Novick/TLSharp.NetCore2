@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>TLSharp.NetCore2.Core</AssemblyName>
+    <RootNamespace>TLSharp.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Requests\AuthSendCodeRequest.cs" />
+    <Compile Remove="Requests\AuthSignInRequest.cs" />
+    <Compile Remove="Requests\DownloadFileRequest.cs" />
+    <Compile Remove="Requests\InitConnectionRequest.cs" />
+    <Compile Remove="Requests\MTProtoRequest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BigMath\BigMath.csproj" />
+    <ProjectReference Include="..\TeleSharp.NetCore2.TL\TeleSharp.NetCore2.TL.csproj" />
+  </ItemGroup>
+
+</Project>
